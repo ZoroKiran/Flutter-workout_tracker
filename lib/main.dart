@@ -22,14 +22,21 @@ class MyApp extends StatelessWidget {
     //remove the original container/placeholder and replace it with material app, which contains theming data around the materil design specification
     return MaterialApp(
       title: 'Workout Tracker',
-      theme: ThemeData(),
+      theme: ThemeData(
+          fontFamily: 'Roboto',
+          textTheme: TextTheme(
+              displayLarge: TextStyle(
+            fontSize: 14,
+            color: Colors.black,
+            fontWeight: FontWeight.w900,
+          ))),
       //to get right of the debug banner on the top right hand side in the app.
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => HomePage(),
         '/details': (context) => DetailsPage(),
       },
-      initialRoute: '/',
+      initialRoute: '/details',
     );
   }
 }
